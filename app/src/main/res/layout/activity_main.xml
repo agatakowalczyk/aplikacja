@@ -8,6 +8,7 @@
     android:foregroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/Tytuł_aplikacji"
         android:layout_width="206dp"
@@ -24,7 +25,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48"  />
+        app:layout_constraintVertical_bias="0.306" />
 
     <TextView
         android:id="@+id/wybierzTryb"
@@ -39,25 +40,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tytuł_aplikacji" />
-
+        app:layout_constraintTop_toBottomOf="@+id/Tytuł_aplikacji"
+        app:layout_constraintVertical_bias="0.12" />
 
     <ImageButton
         android:id="@+id/farma"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wybierzTryb"
         app:layout_constraintVertical_bias="0.09"
-        app:srcCompat="@drawable/farma"/>
+        app:srcCompat="@drawable/farma" />
 
     <ImageButton
         android:id="@+id/instrumenty"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:adjustViewBounds="true"
@@ -67,10 +70,11 @@
         app:layout_constraintStart_toEndOf="@+id/farma"
         app:layout_constraintTop_toBottomOf="@+id/wybierzTryb"
         app:layout_constraintVertical_bias="0.09"
-        app:srcCompat="@drawable/instrumenty"/>
+        app:srcCompat="@drawable/instrumenty" />
 
     <ImageButton
         android:id="@+id/zoo"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginBottom="36dp"
@@ -81,10 +85,12 @@
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/farma"
-        app:srcCompat="@drawable/zoo"/>
+        app:layout_constraintVertical_bias="0.336"
+        app:srcCompat="@drawable/zoo" />
 
     <ImageButton
         android:id="@+id/pojazdy"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginEnd="24dp"
@@ -97,6 +103,6 @@
         app:layout_constraintStart_toEndOf="@+id/zoo"
         app:layout_constraintTop_toBottomOf="@+id/instrumenty"
         app:layout_constraintVertical_bias="0.282"
-        app:srcCompat="@drawable/pojazdy"/>
+        app:srcCompat="@drawable/pojazdy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Zoo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#86DFFF"
+    tools:context=".ZooLayout">
+
+    <TextView
+        android:id="@+id/nazwaZoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="500dp"
+        android:text="ZOO"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/Tło"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="102dp"
+        android:background="#287177"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst" />
+
+    <ImageButton
+        android:id="@+id/delfin"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/delfin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst" />
+
+    <ImageButton
+        android:id="@+id/slon"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/slon"
+        app:layout_constraintStart_toEndOf="@+id/delfin"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+
+    <ImageButton
+        android:id="@+id/papuga"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/parrot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/slon"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+
+    <ImageButton
+        android:id="@+id/wunsz"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/snake"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delfin" />
+
+    <ImageButton
+        android:id="@+id/foka"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/seal"
+        app:layout_constraintStart_toEndOf="@+id/wunsz"
+        app:layout_constraintTop_toBottomOf="@+id/slon" />
+
+    <ImageButton
+        android:id="@+id/lew"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="96dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sowa"
+        app:layout_constraintTop_toBottomOf="@+id/monkey"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/sowa"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/owl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wilk"
+        app:layout_constraintTop_toBottomOf="@+id/foka"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/monkey"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/monkey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/foka"
+        app:layout_constraintTop_toBottomOf="@+id/papuga" />
+
+    <ImageButton
+        android:id="@+id/wilk"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wilk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wunsz"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/JakiPojazd_tekst"
+        android:layout_width="275dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="44dp"
+        android:text="Jakie zwierzę słyszysz?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+
+    <ImageButton
+        android:id="@+id/odtwarzaj"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tło"
+        app:srcCompat="@android:drawable/ic_media_play"
+        app:tint="#287177" />
+
+    <ImageButton
+        android:id="@+id/powrot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:tintMode="src_over"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

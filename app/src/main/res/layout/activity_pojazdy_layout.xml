@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#86DFFF"
+    tools:context=".PojazdyLayout">
+
+    <TextView
+        android:id="@+id/nazwaPojazdy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="500dp"
+        android:text="POJAZDY"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/Tło2"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginBottom="96dp"
+        android:background="#287177"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/rower"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/rower"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+
+    <ImageButton
+        android:id="@+id/statek"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/statek"
+        app:layout_constraintStart_toEndOf="@+id/rower"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+
+    <ImageButton
+        android:id="@+id/pociag"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/pociag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/statek"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+
+    <ImageButton
+        android:id="@+id/truck"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/truck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rower" />
+
+    <ImageButton
+        android:id="@+id/samochod"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/car"
+        app:layout_constraintStart_toEndOf="@+id/truck"
+        app:layout_constraintTop_toBottomOf="@+id/statek" />
+
+    <ImageButton
+        android:id="@+id/motor"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/motor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/helikopter"
+        app:layout_constraintTop_toBottomOf="@+id/samolot"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/helikopter"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/helikopter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/policja"
+        app:layout_constraintTop_toBottomOf="@+id/samochod"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/samolot"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/samolot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/samochod"
+        app:layout_constraintTop_toBottomOf="@+id/pociag" />
+
+    <ImageButton
+        android:id="@+id/policja"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wilk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/truck"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/JakiPojazd_tekst"
+        android:layout_width="275dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="44dp"
+        android:text="Jaki pojazd wydaje ten dźwięk?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+
+    <ImageButton
+        android:id="@+id/odtwarzaj2"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:tint="#287177"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tło2"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/powrot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:tintMode="src_over"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
