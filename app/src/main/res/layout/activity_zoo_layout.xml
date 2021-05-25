@@ -35,21 +35,23 @@
         android:background="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst" />
+        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst"
+        app:layout_constraintVertical_bias="0.454" />
 
     <ImageButton
         android:id="@+id/delfin"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="160dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/delfin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst" />
+        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
 
     <ImageButton
         android:id="@+id/slon"
@@ -84,7 +86,7 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="59dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
@@ -159,7 +161,7 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="59dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"

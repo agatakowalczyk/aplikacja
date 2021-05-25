@@ -5,200 +5,208 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#86DFFF"
-    android:foregroundTint="#FFFFFF"
     tools:context=".FarmaActivity">
 
     <TextView
         android:id="@+id/farmaid"
-        android:layout_width="230dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="430dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Farma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="500dp"
+        android:text="FARMA"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="60sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
         android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <TextView
-        android:id="@+id/tekst"
-        android:layout_width="297dp"
-        android:layout_height="105dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Jakie zwierzę słyszysz?"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        android:textStyle="bold"
+        android:id="@+id/Tło2"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginBottom="96dp"
+        android:background="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/farmaid"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/ges"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="128dp"
+        android:id="@+id/owca"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="160dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        android:scaleType="fitXY"
+        android:src="@drawable/owca"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kogut"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ges" />
+        app:layout_constraintTop_toBottomOf="@+id/farmaid" />
+
+    <ImageButton
+        android:id="@+id/pies"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/pies"
+        app:layout_constraintStart_toEndOf="@+id/owca"
+        app:layout_constraintTop_toBottomOf="@+id/farmaid" />
+
+    <ImageButton
+        android:id="@+id/swinia"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/swinia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/pies"
+        app:layout_constraintTop_toBottomOf="@+id/farmaid" />
+
+    <ImageButton
+        android:id="@+id/kogut"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kogut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/owca" />
+
+    <ImageButton
+        android:id="@+id/kot"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/kot"
+        app:layout_constraintStart_toEndOf="@+id/kogut"
+        app:layout_constraintTop_toBottomOf="@+id/pies" />
 
     <ImageButton
         android:id="@+id/kaczka"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="128dp"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
+        android:src="@drawable/kaczka"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/kon"
         app:layout_constraintTop_toBottomOf="@+id/krowa"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kaczka" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/kon"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="128dp"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
+        android:src="@drawable/kon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ges"
         app:layout_constraintTop_toBottomOf="@+id/kot"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kon" />
-
-    <ImageButton
-        android:id="@+id/kogut"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="260dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swinia"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kogut" />
-
-    <ImageButton
-        android:id="@+id/kot"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="260dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/kogut"
-        app:layout_constraintTop_toBottomOf="@+id/pies"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kot" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/krowa"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="260dp"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/krowa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/kot"
-        app:layout_constraintTop_toBottomOf="@+id/owca"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/krowa" />
+        app:layout_constraintTop_toBottomOf="@+id/swinia" />
 
     <ImageButton
-        android:id="@+id/pies"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="368dp"
+        android:id="@+id/ges"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ges"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/swinia"
-        app:layout_constraintTop_toBottomOf="@+id/tekst"
-        app:srcCompat="@drawable/pies" />
-
-    <ImageButton
-        android:id="@+id/swinia"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="368dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tekst"
-        app:srcCompat="@drawable/swinia" />
+        app:layout_constraintTop_toBottomOf="@+id/kogut"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/farma_tekst"
+        android:layout_width="275dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="44dp"
+        android:text="Jakie zwierzę słyszysz?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmaid" />
 
     <ImageButton
-        android:id="@+id/owca"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="368dp"
+        android:id="@+id/odtwarzaj4"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
         android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
         android:scaleType="fitCenter"
+        app:tint="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/pies"
-        app:layout_constraintTop_toBottomOf="@+id/tekst"
-        app:srcCompat="@drawable/owca" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tło2"
+        app:srcCompat="@android:drawable/ic_media_play" />
 
-    <Button
-        android:id="@+id/wyjscie"
+    <ImageButton
+        android:id="@+id/powrot4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableTint="#E91E63"
-        android:text="Wyjście"
+        android:backgroundTint="#00FFFFFF"
+        android:tintMode="src_over"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/play"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/play"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farmaid"
-        app:layout_constraintVertical_bias="0.894"
-        app:srcCompat="@drawable/play" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
