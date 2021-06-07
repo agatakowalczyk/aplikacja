@@ -42,53 +42,53 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/rower"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+        app:layout_constraintStart_toStartOf="@+id/Tło2"
+        app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
         android:id="@+id/statek"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/statek"
         app:layout_constraintStart_toEndOf="@+id/rower"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+        app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
         android:id="@+id/pociag"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/pociag"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/statek"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaPojazdy" />
+        app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
         android:id="@+id/truck"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/truck"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toBottomOf="@+id/rower" />
 
     <ImageButton
@@ -96,8 +96,8 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/car"
@@ -109,45 +109,45 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/motor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/Tło2"
+        app:layout_constraintEnd_toEndOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/helikopter"
-        app:layout_constraintTop_toBottomOf="@+id/samolot"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/samolot" />
 
     <ImageButton
         android:id="@+id/helikopter"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/helikopter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/policja"
-        app:layout_constraintTop_toBottomOf="@+id/samochod"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/samochod" />
 
     <ImageButton
         android:id="@+id/samolot"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/samolot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/samochod"
         app:layout_constraintTop_toBottomOf="@+id/pociag" />
 
@@ -156,15 +156,15 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/policja"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/truck"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/Tło2"
+        app:layout_constraintStart_toStartOf="@+id/Tło2"
+        app:layout_constraintTop_toBottomOf="@+id/truck" />
 
     <TextView
         android:id="@+id/JakiPojazd_tekst"

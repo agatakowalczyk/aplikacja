@@ -45,53 +45,53 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/delfin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+        app:layout_constraintStart_toStartOf="@+id/Tło"
+        app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
         android:id="@+id/slon"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/slon"
         app:layout_constraintStart_toEndOf="@+id/delfin"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+        app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
         android:id="@+id/papuga"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/parrot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/Tło"
         app:layout_constraintStart_toEndOf="@+id/slon"
-        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
+        app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
         android:id="@+id/wunsz"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/snake"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Tło"
         app:layout_constraintTop_toBottomOf="@+id/delfin" />
 
     <ImageButton
@@ -99,8 +99,8 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/seal"
@@ -112,47 +112,45 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/lion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/Tło"
+        app:layout_constraintEnd_toEndOf="@+id/Tło"
         app:layout_constraintStart_toEndOf="@+id/sowa"
-        app:layout_constraintTop_toBottomOf="@+id/monkey"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/monkey" />
 
     <ImageButton
         android:id="@+id/sowa"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/owl"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/Tło"
         app:layout_constraintStart_toEndOf="@+id/wilk"
-        app:layout_constraintTop_toBottomOf="@+id/foka"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/foka" />
 
     <ImageButton
         android:id="@+id/monkey"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/monkey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/Tło"
         app:layout_constraintStart_toEndOf="@+id/foka"
         app:layout_constraintTop_toBottomOf="@+id/papuga" />
 
@@ -161,15 +159,15 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/wilk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wunsz"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/Tło"
+        app:layout_constraintStart_toStartOf="@+id/Tło"
+        app:layout_constraintTop_toBottomOf="@+id/wunsz" />
 
     <TextView
         android:id="@+id/JakiPojazd_tekst"

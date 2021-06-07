@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balody_serduszka"
+        app:layout_constraintTop_toBottomOf="@+id/balon_serduszka"
         app:srcCompat="@drawable/balon_zielony" />
 
     <ImageButton
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balody_serduszka"
+        app:layout_constraintTop_toBottomOf="@+id/balon_serduszka"
         app:srcCompat="@drawable/balon_zolty" />
 
     <ImageButton

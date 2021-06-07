@@ -6,15 +6,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageButton
 
 class MainActivity : AppCompatActivity() {
 
     private var nazwaAplikacji: TextView? = null;
     private var wybierzTryb: TextView? = null;
-    private var zoo: Button? =null;
-    private var instrumenty: Button? =null;
-    private var pojazdy: Button? =null;
-    private var farma: Button? =null;
+    private var zoo: AppCompatImageButton? =null;
+    private var instrumenty: AppCompatImageButton? =null;
+    private var pojazdy: AppCompatImageButton? =null;
+    private var farma: AppCompatImageButton? =null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

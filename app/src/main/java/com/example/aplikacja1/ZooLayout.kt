@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.content.Intent
+import androidx.appcompat.widget.AppCompatImageButton
 
 class ZooLayout : AppCompatActivity() {
 
@@ -13,18 +14,18 @@ class ZooLayout : AppCompatActivity() {
     private var wyswietlanyTekst: TextView? = null;
     private var wykrzyknik: TextView? = null;
     //guziki ze zwierzetami
-    private var delfin: Button? =null;
-    private var slon: Button? =null;
-    private var papuga: Button? =null;
-    private var waz: Button? =null;
-    private var foka: Button? =null;
-    private var lew: Button? =null;
-    private var sowa: Button? =null;
-    private var malpa: Button? =null;
-    private var wilk: Button? =null;
+    private var delfin: AppCompatImageButton? =null;
+    private var slon: AppCompatImageButton? =null;
+    private var papuga: AppCompatImageButton? =null;
+    private var waz: AppCompatImageButton? =null;
+    private var foka: AppCompatImageButton? =null;
+    private var lew: AppCompatImageButton? =null;
+    private var sowa: AppCompatImageButton? =null;
+    private var malpa: AppCompatImageButton? =null;
+    private var wilk: AppCompatImageButton? =null;
     //guziki do obslugiwania apki
-    private var odtworz: Button? =null;
-    private var wstecz: Button? =null;
+    private var odtworz: AppCompatImageButton? =null;
+    private var wstecz: AppCompatImageButton? =null;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +48,16 @@ class ZooLayout : AppCompatActivity() {
 
         odtworz =findViewById(R.id.odtwarzaj)
         wstecz = findViewById(R.id.powrot)
+
+        wstecz?.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?){
+                openLayoutMain()
+            }
+        })
     }
 
+    private fun openLayoutMain(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
