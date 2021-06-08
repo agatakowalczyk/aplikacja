@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#FFFFFF"
-        android:textSize="56sp"
+        android:textSize="50dp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -169,8 +169,8 @@
 
     <TextView
         android:id="@+id/instrumenty_tekst"
-        android:layout_width="275dp"
-        android:layout_height="96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="44dp"
         android:text="Jaki instrument wydaje ten dźwięk?"

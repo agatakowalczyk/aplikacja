@@ -30,15 +30,14 @@
         android:id="@+id/Tło"
         android:layout_width="340dp"
         android:layout_height="340dp"
-        android:layout_marginTop="12dp"
         android:layout_marginBottom="102dp"
         android:background="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JakiPojazd_tekst"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintTop_toBottomOf="@+id/nazwaZoo"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/delfin"
@@ -169,17 +168,19 @@
         app:layout_constraintStart_toStartOf="@+id/Tło"
         app:layout_constraintTop_toBottomOf="@+id/wunsz" />
 
+
     <TextView
-        android:id="@+id/JakiPojazd_tekst"
-        android:layout_width="275dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="44dp"
+        android:id="@+id/zoo_tekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35sp"
         android:text="Jakie zwierzę słyszysz?"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#FFFFFF"
-        android:textSize="36dp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Tło"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nazwaZoo" />
@@ -191,12 +192,14 @@
         android:adjustViewBounds="true"
         android:backgroundTint="#FFFFFF"
         android:scaleType="fitCenter"
+        app:tint="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Tło"
-        app:srcCompat="@android:drawable/ic_media_play"
-        app:tint="#287177" />
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+
 
     <ImageButton
         android:id="@+id/powrot"

@@ -51,10 +51,21 @@ class FarmaActivity : AppCompatActivity() {
                 openLayoutMain()
             }
         })
+
+        owca?.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?){
+                openLayoutBrawo()
+            }
+        })
     }
 
     private fun openLayoutMain(){
         val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openLayoutBrawo(){
+        val intent = Intent(this, BrawoActivity::class.java)
         startActivity(intent)
     }
 }

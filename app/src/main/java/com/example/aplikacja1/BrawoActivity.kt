@@ -39,31 +39,7 @@ class BrawoActivity : AppCompatActivity() {
                 openLayoutMain()
             }
         })
-        balonczerwony?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                openLayoutMain()
-            }
-        })
-        balonzielony?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                openLayoutMain()
-            }
-        })
-        balonzolty?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                openLayoutMain()
-            }
-        })
-        balonzolty2?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                openLayoutMain()
-            }
-        })
-        balonserduszka?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                openLayoutMain()
-            }
-        })
+
     }
     private fun openLayoutMain(){
         val intent = Intent(this, MainActivity::class.java)
