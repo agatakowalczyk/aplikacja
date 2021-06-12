@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/owca"
+        android:id="@+id/farm_1"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -46,12 +46,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/owca"
+        android:src="@drawable/farm6"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/pies"
+        android:id="@+id/farm_2"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -59,12 +59,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/pies"
-        app:layout_constraintStart_toEndOf="@+id/owca"
+        android:src="@drawable/farm7"
+        app:layout_constraintStart_toEndOf="@+id/farm_1"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/swinia"
+        android:id="@+id/farm_3"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -73,13 +73,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/swinia"
+        android:src="@drawable/farm8"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/pies"
+        app:layout_constraintStart_toEndOf="@+id/farm_2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/kogut"
+        android:id="@+id/farm_4"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -87,12 +87,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/kogut"
+        android:src="@drawable/farm2"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
-        app:layout_constraintTop_toBottomOf="@+id/owca" />
+        app:layout_constraintTop_toBottomOf="@+id/farm_1" />
 
     <ImageButton
-        android:id="@+id/kot"
+        android:id="@+id/farm_5"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -100,12 +100,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/kot"
-        app:layout_constraintStart_toEndOf="@+id/kogut"
-        app:layout_constraintTop_toBottomOf="@+id/pies" />
+        android:src="@drawable/farm4"
+        app:layout_constraintStart_toEndOf="@+id/farm_4"
+        app:layout_constraintTop_toBottomOf="@+id/farm_2" />
 
     <ImageButton
-        android:id="@+id/kaczka"
+        android:id="@+id/farm_6"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -115,14 +115,14 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/kaczka"
+        android:src="@drawable/farm1"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/kon"
-        app:layout_constraintTop_toBottomOf="@+id/krowa" />
+        app:layout_constraintStart_toEndOf="@+id/farm_7"
+        app:layout_constraintTop_toBottomOf="@+id/farm_8" />
 
     <ImageButton
-        android:id="@+id/kon"
+        android:id="@+id/farm_7"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -131,13 +131,13 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/kon"
+        android:src="@drawable/farm3"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/ges"
-        app:layout_constraintTop_toBottomOf="@+id/kot" />
+        app:layout_constraintStart_toEndOf="@+id/farm_9"
+        app:layout_constraintTop_toBottomOf="@+id/farm_5" />
 
     <ImageButton
-        android:id="@+id/krowa"
+        android:id="@+id/farm_8"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -146,13 +146,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/krowa"
+        android:src="@drawable/farm5"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/kot"
-        app:layout_constraintTop_toBottomOf="@+id/swinia" />
+        app:layout_constraintStart_toEndOf="@+id/farm_5"
+        app:layout_constraintTop_toBottomOf="@+id/farm_3" />
 
     <ImageButton
-        android:id="@+id/ges"
+        android:id="@+id/farm_9"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -161,10 +161,10 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/ges"
+        android:src="@drawable/farm9"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
-        app:layout_constraintTop_toBottomOf="@+id/kogut"
+        app:layout_constraintTop_toBottomOf="@+id/farm_4"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView

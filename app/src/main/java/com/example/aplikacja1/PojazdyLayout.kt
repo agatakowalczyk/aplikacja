@@ -1,28 +1,22 @@
 package com.example.aplikacja1
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageButton
+import java.lang.IllegalArgumentException
+import java.util.ArrayList
+import kotlin.random.Random
 
 class PojazdyLayout : AppCompatActivity() {
 
     private var nazwaTrybu: TextView? = null;
     private var wykrzyknik: TextView? = null;
     private var wyswietlanyTekst: TextView? = null;
-    //guziki ze zwierzetami
-    private var rower: AppCompatImageButton? =null;
-    private var statek: AppCompatImageButton? =null;
-    private var pociag: AppCompatImageButton? =null;
-    private var truck: AppCompatImageButton? =null;
-    private var samochod: AppCompatImageButton? =null;
-    private var samolot: AppCompatImageButton? =null;
-    private var policja: AppCompatImageButton? =null;
-    private var helikopter: AppCompatImageButton? =null;
-    private var motor: AppCompatImageButton? =null;
     //guziki do obslugiwania apki
     private var odtworz: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
@@ -36,15 +30,38 @@ class PojazdyLayout : AppCompatActivity() {
         wyswietlanyTekst = findViewById(R.id.JakiPojazd_tekst)
         wykrzyknik = findViewById(R.id.JakiPojazd_tekst)
 
-        rower = findViewById(R.id.rower)
-        statek = findViewById(R.id.statek)
-        pociag = findViewById(R.id.pociag)
-        truck = findViewById(R.id.truck)
-        samochod = findViewById(R.id.samochod)
-        samolot = findViewById(R.id.samolot)
-        policja = findViewById(R.id.policja)
-        helikopter = findViewById(R.id.helikopter)
-        motor = findViewById(R.id.motor)
+        val nazwy: Array<ImageButton> = arrayOf(
+            findViewById(R.id.pojazd_1) as ImageButton,
+            findViewById(R.id.pojazd_2) as ImageButton,
+            findViewById(R.id.pojazd_3) as ImageButton,
+            findViewById(R.id.pojazd_4) as ImageButton,
+            findViewById(R.id.pojazd_5) as ImageButton,
+            findViewById(R.id.pojazd_6) as ImageButton,
+            findViewById(R.id.pojazd_7) as ImageButton,
+            findViewById(R.id.pojazd_8) as ImageButton,
+            findViewById(R.id.pojazd_9) as ImageButton,
+        )
+        val indeksy: ArrayList<Int> = ArrayList()
+        val size = 10
+
+        while(indeksy.count()<9) {
+            var losuj = Random.nextInt(1,10)
+            if (!indeksy.contains(losuj)) {
+                indeksy.add(losuj);
+            }
+        }
+
+        nazwy.forEachIndexed{index, it ->
+            var str = "poj" + indeksy.get(index).toString()
+            it.setImageDrawable(
+                resources.getDrawable(
+                    ZooLayout.Companion.getResourceID(
+                        str, "drawable",
+                        applicationContext
+                    )
+                )
+            )
+        }
 
         odtworz =findViewById(R.id.odtwarzaj2)
         wstecz = findViewById(R.id.powrot2)
@@ -59,5 +76,20 @@ class PojazdyLayout : AppCompatActivity() {
     private fun openLayoutMain(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+    }
+    companion object {
+        protected fun getResourceID(resName: String, resType: String?, ctx: Context): Int {
+            val ResourceID = ctx.resources.getIdentifier(
+                resName, resType,
+                ctx.applicationInfo.packageName
+            )
+            return if (ResourceID == 0) {
+                throw IllegalArgumentException(
+                    "No resource string found with name $resName"
+                )
+            } else {
+                ResourceID
+            }
+        }
     }
 }

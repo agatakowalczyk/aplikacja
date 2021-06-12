@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/delfin"
+        android:id="@+id/zoo_1"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -48,12 +48,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/delfin"
+        android:src="@drawable/zoo9"
         app:layout_constraintStart_toStartOf="@+id/Tło"
         app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
-        android:id="@+id/slon"
+        android:id="@+id/zoo_2"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -61,12 +61,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/slon"
-        app:layout_constraintStart_toEndOf="@+id/delfin"
+        android:src="@drawable/zoo6"
+        app:layout_constraintStart_toEndOf="@+id/zoo_1"
         app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
-        android:id="@+id/papuga"
+        android:id="@+id/zoo_3"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -75,13 +75,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/parrot"
+        android:src="@drawable/zoo4"
         app:layout_constraintEnd_toEndOf="@+id/Tło"
-        app:layout_constraintStart_toEndOf="@+id/slon"
+        app:layout_constraintStart_toEndOf="@+id/zoo_2"
         app:layout_constraintTop_toTopOf="@+id/Tło" />
 
     <ImageButton
-        android:id="@+id/wunsz"
+        android:id="@+id/zoo_4"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -89,12 +89,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/snake"
+        android:src="@drawable/zoo8"
         app:layout_constraintStart_toStartOf="@+id/Tło"
-        app:layout_constraintTop_toBottomOf="@+id/delfin" />
+        app:layout_constraintTop_toBottomOf="@+id/zoo_1" />
 
     <ImageButton
-        android:id="@+id/foka"
+        android:id="@+id/zoo_5"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -102,12 +102,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/seal"
-        app:layout_constraintStart_toEndOf="@+id/wunsz"
-        app:layout_constraintTop_toBottomOf="@+id/slon" />
+        android:src="@drawable/zoo5"
+        app:layout_constraintStart_toEndOf="@+id/zoo_4"
+        app:layout_constraintTop_toBottomOf="@+id/zoo_2" />
 
     <ImageButton
-        android:id="@+id/lew"
+        android:id="@+id/zoo_6"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -117,14 +117,14 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/lion"
+        android:src="@drawable/zoo1"
         app:layout_constraintBottom_toBottomOf="@+id/Tło"
         app:layout_constraintEnd_toEndOf="@+id/Tło"
-        app:layout_constraintStart_toEndOf="@+id/sowa"
-        app:layout_constraintTop_toBottomOf="@+id/monkey" />
+        app:layout_constraintStart_toEndOf="@+id/zoo_7"
+        app:layout_constraintTop_toBottomOf="@+id/zoo_8" />
 
     <ImageButton
-        android:id="@+id/sowa"
+        android:id="@+id/zoo_7"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -133,13 +133,13 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/owl"
+        android:src="@drawable/zoo3"
         app:layout_constraintBottom_toBottomOf="@+id/Tło"
-        app:layout_constraintStart_toEndOf="@+id/wilk"
-        app:layout_constraintTop_toBottomOf="@+id/foka" />
+        app:layout_constraintStart_toEndOf="@+id/zoo_9"
+        app:layout_constraintTop_toBottomOf="@+id/zoo_5" />
 
     <ImageButton
-        android:id="@+id/monkey"
+        android:id="@+id/zoo_8"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -148,13 +148,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/monkey"
+        android:src="@drawable/zoo2"
         app:layout_constraintEnd_toEndOf="@+id/Tło"
-        app:layout_constraintStart_toEndOf="@+id/foka"
-        app:layout_constraintTop_toBottomOf="@+id/papuga" />
+        app:layout_constraintStart_toEndOf="@+id/zoo_5"
+        app:layout_constraintTop_toBottomOf="@+id/zoo_3" />
 
     <ImageButton
-        android:id="@+id/wilk"
+        android:id="@+id/zoo_9"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -163,10 +163,10 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/wilk"
+        android:src="@drawable/zoo7"
         app:layout_constraintBottom_toBottomOf="@+id/Tło"
         app:layout_constraintStart_toStartOf="@+id/Tło"
-        app:layout_constraintTop_toBottomOf="@+id/wunsz" />
+        app:layout_constraintTop_toBottomOf="@+id/zoo_4" />
 
 
     <TextView

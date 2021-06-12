@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/fortepian"
+        android:id="@+id/inst_1"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -47,12 +47,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/fortepian"
+        android:src="@drawable/inst3"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/beben"
+        android:id="@+id/inst_2"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -60,12 +60,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/beben"
-        app:layout_constraintStart_toEndOf="@+id/fortepian"
+        android:src="@drawable/inst2"
+        app:layout_constraintStart_toEndOf="@+id/inst_1"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/skrzypce"
+        android:id="@+id/inst_3"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -74,13 +74,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/skrzypce"
+        android:src="@drawable/inst8"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/beben"
+        app:layout_constraintStart_toEndOf="@+id/inst_2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
     <ImageButton
-        android:id="@+id/harmonijka"
+        android:id="@+id/inst_4"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -88,12 +88,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/harmonijka"
+        android:src="@drawable/inst6"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
-        app:layout_constraintTop_toBottomOf="@+id/fortepian" />
+        app:layout_constraintTop_toBottomOf="@+id/inst_1" />
 
     <ImageButton
-        android:id="@+id/trojkat"
+        android:id="@+id/inst_5"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -101,12 +101,12 @@
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/trojkat"
-        app:layout_constraintStart_toEndOf="@+id/harmonijka"
-        app:layout_constraintTop_toBottomOf="@+id/beben" />
+        android:src="@drawable/inst9"
+        app:layout_constraintStart_toEndOf="@+id/inst_4"
+        app:layout_constraintTop_toBottomOf="@+id/inst_2" />
 
     <ImageButton
-        android:id="@+id/marakasy"
+        android:id="@+id/inst_6"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -116,14 +116,14 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/marakasy"
+        android:src="@drawable/inst7"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/gitara"
-        app:layout_constraintTop_toBottomOf="@+id/harfa" />
+        app:layout_constraintStart_toEndOf="@+id/inst_7"
+        app:layout_constraintTop_toBottomOf="@+id/inst_8" />
 
     <ImageButton
-        android:id="@+id/gitara"
+        android:id="@+id/inst_7"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -132,13 +132,13 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/gitara"
+        android:src="@drawable/inst4"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/flet"
-        app:layout_constraintTop_toBottomOf="@+id/trojkat" />
+        app:layout_constraintStart_toEndOf="@+id/inst_9"
+        app:layout_constraintTop_toBottomOf="@+id/inst_5" />
 
     <ImageButton
-        android:id="@+id/harfa"
+        android:id="@+id/inst_8"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -147,13 +147,13 @@
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/harfa"
+        android:src="@drawable/inst5"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
-        app:layout_constraintStart_toEndOf="@+id/trojkat"
-        app:layout_constraintTop_toBottomOf="@+id/skrzypce" />
+        app:layout_constraintStart_toEndOf="@+id/inst_5"
+        app:layout_constraintTop_toBottomOf="@+id/inst_3" />
 
     <ImageButton
-        android:id="@+id/flet"
+        android:id="@+id/inst_9"
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -162,10 +162,10 @@
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/flet"
+        android:src="@drawable/inst1"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
-        app:layout_constraintTop_toBottomOf="@+id/harmonijka" />
+        app:layout_constraintTop_toBottomOf="@+id/inst_4" />
 
     <TextView
         android:id="@+id/instrumenty_tekst"
