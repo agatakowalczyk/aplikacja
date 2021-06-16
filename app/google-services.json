@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "907679226171",
+    "firebase_url": "https://baza-dzwiekow-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "baza-dzwiekow",
+    "storage_bucket": "baza-dzwiekow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907679226171:android:d99f617347457a944abf1e",
+        "android_client_info": {
+          "package_name": "com.example.aplikacja1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907679226171-q2e2ostek4bst261eea2rd8vkpm8u0gt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplikacja1",
+            "certificate_hash": "e140f7bf98b5e93afb22995c1fc3d5e0c8aa7e92"
+          }
+        },
+        {
+          "client_id": "907679226171-58qlrdh9gqps5norte42jjc8mro9limu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEDHh7Xk0i7IhH7pHh7MsswrK26Pa2kk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907679226171-58qlrdh9gqps5norte42jjc8mro9limu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
