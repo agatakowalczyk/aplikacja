@@ -1,13 +1,16 @@
 package com.example.aplikacja1
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageButton
+import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.IllegalArgumentException
 import java.util.ArrayList
 import kotlin.random.Random
@@ -75,20 +78,24 @@ class InstrumentyLayout : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+    fun otworzBaze() {
+        val mFireStore = FirebaseFirestore.getInstance()
+        var docRef = mFireStore.collection(Nazwy.INST).document("song1")
+        val mediaID=""
+        docRef.get()
+            .addOnSuccessListener (){ document ->
+                if (document != null) {
+                    Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
+                    val piosenka= document.toObject(Song::class.java)!!
+                    piosenka.mediaID
 
-    companion object {
-        fun getResourceID(resName: String, resType: String?, ctx: Context): Int {
-            val ResourceID = ctx.resources.getIdentifier(
-                resName, resType,
-                ctx.applicationInfo.packageName
-            )
-            return if (ResourceID == 0) {
-                throw IllegalArgumentException(
-                    "No resource string found with name $resName"
-                )
-            } else {
-                ResourceID
+
+                } else {
+                    Log.d(ContentValues.TAG, "No such document")
+                }
             }
-        }
+            .addOnFailureListener { exception ->
+                Log.d(ContentValues.TAG, "get failed with ", exception)
+            }
     }
 }

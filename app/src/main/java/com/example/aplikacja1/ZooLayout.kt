@@ -94,7 +94,7 @@ class ZooLayout : AppCompatActivity() {
 
         odtworz?.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?){
-                otworzZoo()
+
             }
         })
     }
@@ -103,28 +103,6 @@ class ZooLayout : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-
-
-    fun otworzZoo() {
-        var docRef = mFireStore.collection(Nazwy.INST).document("song1")
-        val mediaID=""
-        docRef.get()
-            .addOnSuccessListener (){ document ->
-                if (document != null) {
-                    Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
-
-                } else {
-                    Log.d(ContentValues.TAG, "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "get failed with ", exception)
-            }
-
-    }
-
-
-
 
     companion object {
         fun getResourceID(resName: String, resType: String?, ctx: Context): Int {

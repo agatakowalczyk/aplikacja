@@ -77,19 +77,4 @@ class PojazdyLayout : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-    companion object {
-        protected fun getResourceID(resName: String, resType: String?, ctx: Context): Int {
-            val ResourceID = ctx.resources.getIdentifier(
-                resName, resType,
-                ctx.applicationInfo.packageName
-            )
-            return if (ResourceID == 0) {
-                throw IllegalArgumentException(
-                    "No resource string found with name $resName"
-                )
-            } else {
-                ResourceID
-            }
-        }
-    }
 }
