@@ -30,9 +30,6 @@ class InstrumentyLayout : AppCompatActivity() {
     private var wstecz: AppCompatImageButton? =null;
 
 
-
-
-
 //    private var x :String? = null;
 
         override fun onCreate(savedInstanceState: Bundle?) {
