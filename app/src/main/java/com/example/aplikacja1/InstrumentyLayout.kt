@@ -4,9 +4,12 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import java.util.ArrayList
 import kotlin.random.Random
@@ -79,7 +82,12 @@ class InstrumentyLayout : AppCompatActivity() {
                 var obj = Funkcje()
                 var dok = obj.losuj(czyLosowac, losowe, "song")
                 if(!piosenki.contains(dok)){
+
+                    val i = ImageView(getApplicationContext())
+                    i.setImageResource(R.drawable.dobrze)
+                    val toast = Toast(getApplicationContext())
                     piosenki.add(dok)
+
                 }
                 czyLosowac = false
                 Funkcje.playFromFirebase(dok,this@InstrumentyLayout)
@@ -88,6 +96,27 @@ class InstrumentyLayout : AppCompatActivity() {
         for(i in nazwy.indices){
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
+
+
+//                    //wyświetl emotke
+//                    if (nazwy[i] == ?? ){
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.dobrze)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+//                    else {
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.zle)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
                     punkty+=1
                     czyLosowac=true
                 }
