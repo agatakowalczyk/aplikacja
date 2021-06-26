@@ -1,9 +1,11 @@
 package com.example.aplikacja1
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -66,7 +68,14 @@ class FarmaActivity : AppCompatActivity() {
                 openLayoutMain()
             }
         })
-
+        for (i in nazwy.indices){
+        nazwy[i].setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?){
+                var zmienna = nazwy[i]
+                Log.d(ContentValues.TAG, "Zmienna: $zmienna")
+            }
+        })
+        }
 
     }
 

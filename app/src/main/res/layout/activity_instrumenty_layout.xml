@@ -190,7 +190,7 @@
         android:layout_height="50dp"
         android:adjustViewBounds="true"
         android:backgroundTint="#FFFFFF"
-        android:onClick="playAudio"
+
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
