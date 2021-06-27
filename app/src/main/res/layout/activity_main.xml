@@ -49,13 +49,14 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:backgroundTint="#86DFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wybierzTryb"
-        app:layout_constraintVertical_bias="0.09"
+        app:layout_constraintVertical_bias="0.110000014"
         app:srcCompat="@drawable/farma" />
 
     <ImageButton
@@ -64,13 +65,13 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:backgroundTint="#86DFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toEndOf="@+id/farma"
         app:layout_constraintTop_toBottomOf="@+id/wybierzTryb"
-        app:layout_constraintVertical_bias="0.09"
+        app:layout_constraintVertical_bias="0.110000014"
         app:srcCompat="@drawable/instrumenty" />
 
     <ImageButton
@@ -80,13 +81,14 @@
         android:layout_height="150dp"
         android:layout_marginBottom="36dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:backgroundTint="#86DFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/farma"
-        app:layout_constraintVertical_bias="0.336"
+        app:layout_constraintVertical_bias="0.3"
         app:srcCompat="@drawable/zoo" />
 
     <ImageButton
@@ -94,9 +96,9 @@
         style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginBottom="24dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#86DFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"

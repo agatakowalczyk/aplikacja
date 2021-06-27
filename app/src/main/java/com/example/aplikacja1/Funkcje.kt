@@ -17,24 +17,30 @@ import kotlin.random.Random
 
 open class Funkcje {
 
-        fun playFromFirebase(kolekcja:String,nazwa: String, activity: Activity) {
+        fun playFromFirebase(kolekcja:String,nazwa: String, activity: Activity):Int {
             var mediaPlayer: MediaPlayer? = null
             val mFireStore = FirebaseFirestore.getInstance()
             var docRef = mFireStore.collection(kolekcja).document(nazwa)
             var piosenka = Song()
+            var id = 0
             docRef.get()
                 .addOnSuccessListener() { document ->
                     if (document != null) {
                         Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
                         piosenka = document.toObject(Song::class.java)!!
+                        id = piosenka.mediaId.toInt()
+                        Log.d(ContentValues.TAG, "DocumentSnapshot data: $id")
                         mediaPlayer = MediaPlayer()
                         mediaPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
+
                         try {
+                            println("Dupa")
                             mediaPlayer!!.setDataSource(activity, piosenka.songUrl.toUri())
                             mediaPlayer!!.prepare()
                             mediaPlayer!!.start()
                             Toast.makeText(activity, "Audio started playing..", Toast.LENGTH_SHORT)
                                 .show()
+
                         } catch (e: IOException) {
                             Toast.makeText(activity, "Error found is $e", Toast.LENGTH_SHORT).show()
                         }
@@ -46,6 +52,8 @@ open class Funkcje {
                 .addOnFailureListener { exception ->
                     Log.d(ContentValues.TAG, "get failed with ", exception)
                 }
+            println(id)
+            return id
         }
 
     fun losuj(czylosowac: Boolean, lista: ArrayList<Int>, layout: String): String {
