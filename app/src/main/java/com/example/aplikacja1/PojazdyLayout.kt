@@ -18,8 +18,16 @@ class PojazdyLayout : AppCompatActivity() {
     private var wykrzyknik: TextView? = null;
     private var wyswietlanyTekst: TextView? = null;
     //guziki do obslugiwania apki
-    private var odtworz: AppCompatImageButton? =null;
+    private var play: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
+
+    val obj = Funkcje() //obiekt klasy funkcje, abyśmy mogły wykorzystywać metody niestatyczne
+
+    var czyLosowac = true
+    var punkty = 0
+    var losowe: ArrayList<Int> = ArrayList()
+    var piosenki: ArrayList<String> = ArrayList()
+    val indeksy: ArrayList<Int> = ArrayList()   //tablica do przechowywania indeksów losowanych obrazków
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +38,7 @@ class PojazdyLayout : AppCompatActivity() {
         wyswietlanyTekst = findViewById(R.id.JakiPojazd_tekst)
         wykrzyknik = findViewById(R.id.JakiPojazd_tekst)
 
+        //tablica, w której są przechowywane przyciski z obrazkami
         val nazwy: Array<ImageButton> = arrayOf(
             findViewById(R.id.pojazd_1) as ImageButton,
             findViewById(R.id.pojazd_2) as ImageButton,
@@ -41,21 +50,20 @@ class PojazdyLayout : AppCompatActivity() {
             findViewById(R.id.pojazd_8) as ImageButton,
             findViewById(R.id.pojazd_9) as ImageButton,
         )
-        val indeksy: ArrayList<Int> = ArrayList()
-        val size = 10
 
+        //losowanie indeksów w tablicy bez powtórzeń
         while(indeksy.count()<9) {
             var losuj = Random.nextInt(1,10)
             if (!indeksy.contains(losuj)) {
                 indeksy.add(losuj);
             }
         }
-
+        //pobieranie obrazka o odpowiedniej wartości indeksu z folderu drawable i dopisywanie do kolejnego przycisku
         nazwy.forEachIndexed{index, it ->
             var str = "poj" + indeksy.get(index).toString()
             it.setImageDrawable(
                 resources.getDrawable(
-                    ZooLayout.Companion.getResourceID(
+                    obj.getResourceID(
                         str, "drawable",
                         applicationContext
                     )
@@ -63,7 +71,7 @@ class PojazdyLayout : AppCompatActivity() {
             )
         }
 
-        odtworz =findViewById(R.id.odtwarzaj2)
+        play =findViewById(R.id.odtwarzaj2)
         wstecz = findViewById(R.id.powrot2)
 
         wstecz?.setOnClickListener(object: View.OnClickListener {
@@ -71,6 +79,51 @@ class PojazdyLayout : AppCompatActivity() {
                 openLayoutMain()
             }
         })
+        play?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                var dok = obj.losuj(czyLosowac, losowe, Nazwy.POJ2)
+//                if(!piosenki.contains(dok)){
+//
+//                    val i = ImageView(getApplicationContext())
+//                    i.setImageResource(R.drawable.dobrze)
+//                    val toast = Toast(getApplicationContext())
+//                    piosenki.add(dok)
+//
+//                }
+                czyLosowac = false
+                obj.playFromFirebase(Nazwy.POJ,dok,this@PojazdyLayout)
+            }
+        })
+
+        for(i in nazwy.indices){
+            nazwy[i].setOnClickListener(object : View.OnClickListener {
+                override fun onClick(v: View?) {
+
+
+//                    //wyświetl emotke
+//                    if (nazwy[i] == ?? ){
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.dobrze)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+//                    else {
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.zle)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+                    punkty+=1
+                    czyLosowac=true
+                }
+            })
+        }
     }
 
     private fun openLayoutMain(){

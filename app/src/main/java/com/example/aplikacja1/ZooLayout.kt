@@ -27,17 +27,17 @@ class ZooLayout : AppCompatActivity() {
     private var nazwaTrybu: TextView? = null;
     private var wyswietlanyTekst: TextView? = null;
     private var wykrzyknik: TextView? = null;
-    val mFireStore = FirebaseFirestore.getInstance()
+    private val obj = Funkcje()
 
     //guziki do obslugiwania
-    private var odtworz: AppCompatImageButton? =null;
+    private var play: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
-    //val storage:FirebaseStorage = FirebaseStorage.getInstance("gs://baza-dzwiekow.appspot.com")
 
-    private var mMediaplayer: MediaPlayer? = null
-
-
-
+    var czyLosowac = true
+    var punkty = 0
+    var losowe: ArrayList<Int> = ArrayList()
+    val indeksy: ArrayList<Int> = ArrayList()
+    var piosenki: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class ZooLayout : AppCompatActivity() {
         wyswietlanyTekst = findViewById(R.id.JakiPojazd_tekst)
         wykrzyknik = findViewById(R.id.JakiPojazd_tekst)
 
-        odtworz =findViewById(R.id.odtwarzaj)
+        play =findViewById(R.id.odtwarzaj)
         wstecz = findViewById(R.id.powrot)
 
 
@@ -64,8 +64,6 @@ class ZooLayout : AppCompatActivity() {
             findViewById(R.id.zoo_8) as ImageButton,
             findViewById(R.id.zoo_9) as ImageButton,
         )
-        val indeksy: ArrayList<Int> = ArrayList()
-        val size = 10
 
         while(indeksy.count()<9) {
             var losuj = Random.nextInt(1,10)
@@ -78,7 +76,7 @@ class ZooLayout : AppCompatActivity() {
             var str = "zoo" + indeksy.get(index).toString()
             it.setImageDrawable(
                 resources.getDrawable(
-                    getResourceID(
+                    obj.getResourceID(
                         str, "drawable",
                         applicationContext
                     )
@@ -92,11 +90,51 @@ class ZooLayout : AppCompatActivity() {
             }
         })
 
-        odtworz?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-
+        play?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                var dok = obj.losuj(czyLosowac, losowe,Nazwy.ZOO)
+//                if(!piosenki.contains(dok)){
+//
+//                    val i = ImageView(getApplicationContext())
+//                    i.setImageResource(R.drawable.dobrze)
+//                    val toast = Toast(getApplicationContext())
+//                    piosenki.add(dok)
+//
+//                }
+                czyLosowac = false
+                obj.playFromFirebase(Nazwy.ZOO,dok,this@ZooLayout)
             }
         })
+
+        for(i in nazwy.indices){
+            nazwy[i].setOnClickListener(object : View.OnClickListener {
+                override fun onClick(v: View?) {
+
+
+//                    //wyświetl emotke
+//                    if (nazwy[i] == ?? ){
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.dobrze)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+//                    else {
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.zle)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+                    punkty+=1
+                    czyLosowac=true
+                }
+            })
+        }
     }
 
     private fun openLayoutMain(){
@@ -104,20 +142,6 @@ class ZooLayout : AppCompatActivity() {
         startActivity(intent)
     }
 
-    companion object {
-        fun getResourceID(resName: String, resType: String?, ctx: Context): Int {
-            val ResourceID = ctx.resources.getIdentifier(
-                resName, resType,
-                ctx.applicationInfo.packageName
-            )
-            return if (ResourceID == 0) {
-                throw IllegalArgumentException(
-                    "No resource string found with name $resName"
-                )
-            } else {
-                ResourceID
-            }
-        }
-    }
+
 
 }

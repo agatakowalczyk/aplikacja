@@ -7,9 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.widget.AppCompatImageButton
 import java.lang.IllegalArgumentException
 import java.util.ArrayList
@@ -22,6 +20,13 @@ class FarmaActivity : AppCompatActivity() {
 
     private var play: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
+    private val obj = Funkcje()
+
+    var czyLosowac = true
+    var punkty = 0
+    var losowe: ArrayList<Int> = ArrayList()
+    val indeksy: ArrayList<Int> = ArrayList()
+    var piosenki: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,7 @@ class FarmaActivity : AppCompatActivity() {
         farma =findViewById(R.id.farma)
         pytanie = findViewById(R.id.farma_tekst)
         wstecz = findViewById(R.id.powrot4)
+        play = findViewById(R.id.odtwarzaj4)
 
         val nazwy: Array<ImageButton> = arrayOf(
             findViewById(R.id.farm_1) as ImageButton,
@@ -42,8 +48,6 @@ class FarmaActivity : AppCompatActivity() {
             findViewById(R.id.farm_8) as ImageButton,
             findViewById(R.id.farm_9) as ImageButton,
         )
-        val indeksy: ArrayList<Int> = ArrayList()
-        val size = 10
 
         while(indeksy.count()<9) {
             var losuj = Random.nextInt(1,10)
@@ -56,7 +60,7 @@ class FarmaActivity : AppCompatActivity() {
             var str = "farm" + indeksy.get(index).toString()
             it.setImageDrawable(
                 resources.getDrawable(
-                    ZooLayout.Companion.getResourceID(
+                    obj.getResourceID(
                         str, "drawable",
                         applicationContext
                     )
@@ -68,13 +72,51 @@ class FarmaActivity : AppCompatActivity() {
                 openLayoutMain()
             }
         })
-        for (i in nazwy.indices){
-        nazwy[i].setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
-                var zmienna = nazwy[i]
-                Log.d(ContentValues.TAG, "Zmienna: $zmienna")
+
+        play?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                var dok = obj.losuj(czyLosowac, losowe, Nazwy.FAR2)
+//                if(!piosenki.contains(dok)){
+//
+//                    val i = ImageView(getApplicationContext())
+//                    i.setImageResource(R.drawable.dobrze)
+//                    val toast = Toast(getApplicationContext())
+//                    piosenki.add(dok)
+//
+//                }
+                czyLosowac = false
+                obj.playFromFirebase(Nazwy.FAR1,dok,this@FarmaActivity)
             }
         })
+
+        for(i in nazwy.indices){
+            nazwy[i].setOnClickListener(object : View.OnClickListener {
+                override fun onClick(v: View?) {
+
+
+//                    //wyświetl emotke
+//                    if (nazwy[i] == ?? ){
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.dobrze)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+//                    else {
+//                        val i = ImageView(getApplicationContext())
+//                        i.setImageResource(R.drawable.zle)
+//                        val toast = Toast(getApplicationContext())
+//                        toast.setDuration(Toast.LENGTH_SHORT)
+//                        toast.setGravity(Gravity.CENTER,0,0)
+//                        toast.setView(i)
+//                        toast.show()
+//                    }
+                    punkty+=1
+                    czyLosowac=true
+                }
+            })
         }
 
     }

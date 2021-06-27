@@ -26,6 +26,7 @@ class InstrumentyLayout : AppCompatActivity() {
     val indeksy: ArrayList<Int> = ArrayList()
     var piosenki: ArrayList<String> = ArrayList()
 
+    val obj = Funkcje()
     var czyLosowac = true
     var punkty = 0
 
@@ -51,20 +52,17 @@ class InstrumentyLayout : AppCompatActivity() {
             findViewById(R.id.inst_9) as ImageButton,
         )
 
-
-
         while (indeksy.count() < 9) {
             var losuj = Random.nextInt(1, 10)
             if (!indeksy.contains(losuj)) {
                 indeksy.add(losuj);
             }
         }
-
         nazwy.forEachIndexed { index, it ->
             var str = "inst" + indeksy.get(index).toString()
             it.setImageDrawable(
                 resources.getDrawable(
-                    ZooLayout.Companion.getResourceID(
+                    obj.getResourceID(
                         str, "drawable",
                         applicationContext
                     )
@@ -77,10 +75,11 @@ class InstrumentyLayout : AppCompatActivity() {
                 openLayoutMain()
             }
         })
+
         play?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var obj = Funkcje()
-                var dok = obj.losuj(czyLosowac, losowe, "song")
+                var dok = obj.losuj(czyLosowac, losowe, Nazwy.SO)
                 if(!piosenki.contains(dok)){
 
                     val i = ImageView(getApplicationContext())
@@ -90,9 +89,10 @@ class InstrumentyLayout : AppCompatActivity() {
 
                 }
                 czyLosowac = false
-                Funkcje.playFromFirebase(dok,this@InstrumentyLayout)
+                obj.playFromFirebase(Nazwy.INST,dok,this@InstrumentyLayout)
             }
         })
+
         for(i in nazwy.indices){
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
