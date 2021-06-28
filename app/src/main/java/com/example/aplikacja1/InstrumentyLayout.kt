@@ -111,6 +111,13 @@ class InstrumentyLayout : AppCompatActivity() {
                                 mediaPlayer!!.prepare()
                                 mediaPlayer!!.start()
 
+//                                if(mediaPlayer!!.isPlaying){
+//                                    mediaPlayer!!.stop()
+//                                }
+//                                else{
+//                                    mediaPlayer!!.start()
+//                                }
+
                             } catch (e: IOException) {
                                 Toast.makeText(
                                     this@InstrumentyLayout,

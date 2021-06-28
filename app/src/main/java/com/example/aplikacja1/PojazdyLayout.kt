@@ -138,6 +138,7 @@ class PojazdyLayout : AppCompatActivity() {
 
 
 
+
         for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
