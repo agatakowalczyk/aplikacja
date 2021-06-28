@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <ImageButton
         android:id="@+id/powrot5"
@@ -46,14 +46,14 @@
         style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="94dp"
         android:layout_height="171dp"
-        android:layout_marginBottom="80dp"
         android:background="@null"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/balon_serduszka"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.283"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/balon_czerwony" />
 
     <ImageButton
@@ -65,10 +65,10 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/balon_serduszka"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.723"
         app:srcCompat="@drawable/balon_zielony" />
 
     <ImageButton
@@ -80,10 +80,10 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/balon_serduszka"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.596"
         app:srcCompat="@drawable/balon_zolty" />
 
     <ImageButton
@@ -92,12 +92,12 @@
         android:layout_height="154dp"
         android:background="@null"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/balon_serduszka"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/balon_zolty" />
 
     <ImageButton
@@ -109,11 +109,38 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
+        app:layout_constraintVertical_bias="0.059"
         app:srcCompat="@drawable/balony_serduszka" />
+
+    <TextView
+        android:id="@+id/Zdobyłeś"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zdobyłeś:"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brawo"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <TextView
+        android:id="@+id/Punkty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brawo"
+        app:layout_constraintVertical_bias="0.189" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

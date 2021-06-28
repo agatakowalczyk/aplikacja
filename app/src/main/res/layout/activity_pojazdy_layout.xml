@@ -202,12 +202,12 @@
         android:adjustViewBounds="true"
         android:backgroundTint="#FFFFFF"
         android:scaleType="fitCenter"
-        app:tint="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Tło2"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:srcCompat="@android:drawable/ic_media_play"
+        app:tint="#287177" />
 
     <ImageButton
         android:id="@+id/powrot2"

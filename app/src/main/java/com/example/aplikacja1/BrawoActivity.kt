@@ -11,6 +11,8 @@ import androidx.appcompat.widget.AppCompatImageButton
 class BrawoActivity : AppCompatActivity() {
 
     private var brawo: TextView? = null;
+    private var tekst: TextView? = null;
+    private var punkt: TextView? = null;
 
     private var balonczerwony: AppCompatImageButton? =null;
     private var balonzielony: AppCompatImageButton? =null;
@@ -31,8 +33,16 @@ class BrawoActivity : AppCompatActivity() {
         balonzolty = findViewById(R.id.balon_zolty)
         balonzolty2 = findViewById(R.id.balon_zolty2)
         balonserduszka = findViewById(R.id.balon_serduszka)
+        tekst = findViewById(R.id.Zdobyłeś)
 
         wstecz = findViewById(R.id.powrot5)
+        val punkty=intent.getStringExtra("zmienna")
+        val tekst2:String ="$punkty/10"
+        punkt = findViewById<TextView>(R.id.Punkty).apply {
+            text = tekst2
+        }
+
+
 
         wstecz?.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?){

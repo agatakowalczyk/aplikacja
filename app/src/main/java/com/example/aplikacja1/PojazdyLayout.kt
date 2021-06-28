@@ -1,13 +1,23 @@
 package com.example.aplikacja1
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.media.AudioManager
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
+import androidx.core.net.toUri
+import com.google.firebase.firestore.FirebaseFirestore
+import java.io.IOException
 import java.lang.IllegalArgumentException
 import java.util.ArrayList
 import kotlin.random.Random
@@ -21,14 +31,17 @@ class PojazdyLayout : AppCompatActivity() {
     private var play: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
 
-    val obj = Funkcje() //obiekt klasy funkcje, abyśmy mogły wykorzystywać metody niestatyczne
+    private val obj = Funkcje() //obiekt klasy funkcje, abyśmy mogły wykorzystywać metody niestatyczne
 
-    var czyLosowac = true
-    var punkty = 0
-    var losowe: ArrayList<Int> = ArrayList()
-    var piosenki: ArrayList<String> = ArrayList()
-    val indeksy: ArrayList<Int> = ArrayList()   //tablica do przechowywania indeksów losowanych obrazków
+    private var licznik = 0
+    private var id = 0
+    private var czyLosowac = true
+    private var punkty = 0
+    private var losowe: ArrayList<Int> = ArrayList()
+    private val indeksy: ArrayList<Int> = ArrayList()   //tablica do przechowywania indeksów losowanych obrazków
+    private var piosenki: ArrayList<String> = ArrayList()
 
+    var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,52 +95,98 @@ class PojazdyLayout : AppCompatActivity() {
         play?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dok = obj.losuj(czyLosowac, losowe, Nazwy.POJ2)
-//                if(!piosenki.contains(dok)){
-//
-//                    val i = ImageView(getApplicationContext())
-//                    i.setImageResource(R.drawable.dobrze)
-//                    val toast = Toast(getApplicationContext())
-//                    piosenki.add(dok)
-//
-//                }
+                if (!piosenki.contains(dok)) {
+                    piosenki.add(dok)
+                }
                 czyLosowac = false
-                obj.playFromFirebase(Nazwy.POJ,dok,this@PojazdyLayout)
+
+                val mFireStore = FirebaseFirestore.getInstance()
+                var docRef = mFireStore.collection(Nazwy.POJ).document(dok)
+                docRef.get()
+                    .addOnSuccessListener() { document ->
+                        if (document != null) {
+                            var piosenka = document.toObject(Song::class.java)!!
+                            id = piosenka.mediaId.toInt()
+                            mediaPlayer = MediaPlayer()
+                            mediaPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
+                            //play?.isClickable=false
+                            try {
+                                mediaPlayer!!.setDataSource(
+                                    this@PojazdyLayout,
+                                    piosenka.songUrl.toUri()
+                                )
+                                mediaPlayer!!.prepare()
+                                mediaPlayer!!.start()
+
+                            } catch (e: IOException) {
+                                Toast.makeText(
+                                    this@PojazdyLayout,
+                                    "Error found is $e",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+                        } else {
+                            Log.d(ContentValues.TAG, "No such document")
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.d(ContentValues.TAG, "get failed with ", exception)
+                    }
             }
         })
 
-        for(i in nazwy.indices){
+
+
+        for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
+                    mediaPlayer!!.pause()
+                    var zmienna = indeksy.get(i)
 
+                    if (id == zmienna) {
+                        val k = ImageView(getApplicationContext())
+                        k.setImageResource(R.drawable.dobrze)
+                        val toast = Toast(getApplicationContext())
+                        toast.setDuration(Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.setView(k)
+                        toast.show()
 
-//                    //wyświetl emotke
-//                    if (nazwy[i] == ?? ){
-//                        val i = ImageView(getApplicationContext())
-//                        i.setImageResource(R.drawable.dobrze)
-//                        val toast = Toast(getApplicationContext())
-//                        toast.setDuration(Toast.LENGTH_SHORT)
-//                        toast.setGravity(Gravity.CENTER,0,0)
-//                        toast.setView(i)
-//                        toast.show()
-//                    }
-//                    else {
-//                        val i = ImageView(getApplicationContext())
-//                        i.setImageResource(R.drawable.zle)
-//                        val toast = Toast(getApplicationContext())
-//                        toast.setDuration(Toast.LENGTH_SHORT)
-//                        toast.setGravity(Gravity.CENTER,0,0)
-//                        toast.setView(i)
-//                        toast.show()
-//                    }
-                    punkty+=1
-                    czyLosowac=true
+                        punkty += 1
+                        licznik+=1
+                        czyLosowac = true
+
+                        if (licznik == 9) {
+                            openBrawo()
+                        }
+                    } else {
+                        val k = ImageView(getApplicationContext())
+                        k.setImageResource(R.drawable.zle)
+                        val toast = Toast(getApplicationContext())
+                        toast.setDuration(Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.setView(k)
+                        toast.show()
+                        czyLosowac = true
+                        licznik+=1
+                    }
                 }
             })
         }
+
+
     }
 
-    private fun openLayoutMain(){
+    private fun openLayoutMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-}
+
+    private fun openBrawo() {
+        val pkt = punkty.toString()
+        val intent = Intent(this, BrawoActivity::class.java).apply {
+            putExtra("zmienna",pkt)
+        }
+        startActivity(intent)
+    }}

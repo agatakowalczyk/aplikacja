@@ -3,12 +3,18 @@ package com.example.aplikacja1
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.media.AudioManager
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.AppCompatImageButton
+import androidx.core.net.toUri
+import com.google.firebase.firestore.FirebaseFirestore
+import java.io.IOException
 import java.lang.IllegalArgumentException
 import java.util.ArrayList
 import kotlin.random.Random
@@ -20,13 +26,18 @@ class FarmaActivity : AppCompatActivity() {
 
     private var play: AppCompatImageButton? =null;
     private var wstecz: AppCompatImageButton? =null;
-    private val obj = Funkcje()
 
-    var czyLosowac = true
-    var punkty = 0
-    var losowe: ArrayList<Int> = ArrayList()
-    val indeksy: ArrayList<Int> = ArrayList()
-    var piosenki: ArrayList<String> = ArrayList()
+
+    private var losowe: ArrayList<Int> = ArrayList()
+    private val indeksy: ArrayList<Int> = ArrayList()
+    private var piosenki: ArrayList<String> = ArrayList()
+
+    private val obj = Funkcje()
+    private var czyLosowac = true
+    private var punkty = 0
+    private var licznik = 0
+    private var id = 0
+    private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +46,9 @@ class FarmaActivity : AppCompatActivity() {
         farma =findViewById(R.id.farma)
         pytanie = findViewById(R.id.farma_tekst)
         wstecz = findViewById(R.id.powrot4)
+
         play = findViewById(R.id.odtwarzaj4)
+
 
         val nazwy: Array<ImageButton> = arrayOf(
             findViewById(R.id.farm_1) as ImageButton,
@@ -72,49 +85,85 @@ class FarmaActivity : AppCompatActivity() {
                 openLayoutMain()
             }
         })
-
         play?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var dok = obj.losuj(czyLosowac, losowe, Nazwy.FAR2)
-//                if(!piosenki.contains(dok)){
-//
-//                    val i = ImageView(getApplicationContext())
-//                    i.setImageResource(R.drawable.dobrze)
-//                    val toast = Toast(getApplicationContext())
-//                    piosenki.add(dok)
-//
-//                }
+                if (!piosenki.contains(dok)) {
+                    piosenki.add(dok)
+                }
                 czyLosowac = false
-                obj.playFromFirebase(Nazwy.FAR1,dok,this@FarmaActivity)
+
+                val mFireStore = FirebaseFirestore.getInstance()
+                var docRef = mFireStore.collection(Nazwy.FAR1).document(dok)
+                docRef.get()
+                    .addOnSuccessListener() { document ->
+                        if (document != null) {
+                            var piosenka = document.toObject(Song::class.java)!!
+                            id = piosenka.mediaId.toInt()
+                            mediaPlayer = MediaPlayer()
+                            mediaPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
+                            //play?.isClickable=false
+                            try {
+                                mediaPlayer!!.setDataSource(
+                                    this@FarmaActivity,
+                                    piosenka.songUrl.toUri()
+                                )
+                                mediaPlayer!!.prepare()
+                                mediaPlayer!!.start()
+
+                            } catch (e: IOException) {
+                                Toast.makeText(
+                                    this@FarmaActivity,
+                                    "Error found is $e",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+                        } else {
+                            Log.d(ContentValues.TAG, "No such document")
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.d(ContentValues.TAG, "get failed with ", exception)
+                    }
             }
         })
 
-        for(i in nazwy.indices){
+
+
+        for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
+                    mediaPlayer!!.pause()
+                    var zmienna = indeksy.get(i)
 
+                    if (id == zmienna) {
+                        val k = ImageView(getApplicationContext())
+                        k.setImageResource(R.drawable.dobrze)
+                        val toast = Toast(getApplicationContext())
+                        toast.setDuration(Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.setView(k)
+                        toast.show()
 
-//                    //wyświetl emotke
-//                    if (nazwy[i] == ?? ){
-//                        val i = ImageView(getApplicationContext())
-//                        i.setImageResource(R.drawable.dobrze)
-//                        val toast = Toast(getApplicationContext())
-//                        toast.setDuration(Toast.LENGTH_SHORT)
-//                        toast.setGravity(Gravity.CENTER,0,0)
-//                        toast.setView(i)
-//                        toast.show()
-//                    }
-//                    else {
-//                        val i = ImageView(getApplicationContext())
-//                        i.setImageResource(R.drawable.zle)
-//                        val toast = Toast(getApplicationContext())
-//                        toast.setDuration(Toast.LENGTH_SHORT)
-//                        toast.setGravity(Gravity.CENTER,0,0)
-//                        toast.setView(i)
-//                        toast.show()
-//                    }
-                    punkty+=1
-                    czyLosowac=true
+                        punkty += 1
+                        licznik+=1
+                        czyLosowac = true
+
+                        if (licznik==9) {
+                            openBrawo()
+                        }
+                    } else {
+                        val k = ImageView(getApplicationContext())
+                        k.setImageResource(R.drawable.zle)
+                        val toast = Toast(getApplicationContext())
+                        toast.setDuration(Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.CENTER, 0, 0)
+                        toast.setView(k)
+                        toast.show()
+                        licznik+=1
+                        czyLosowac = true
+                    }
                 }
             })
         }
@@ -125,9 +174,11 @@ class FarmaActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-
-    private fun openLayoutBrawo(){
-        val intent = Intent(this, BrawoActivity::class.java)
+    private fun openBrawo() {
+        val pkt = punkty.toString()
+        val intent = Intent(this, BrawoActivity::class.java).apply {
+            putExtra("zmienna",pkt)
+        }
         startActivity(intent)
     }
 
