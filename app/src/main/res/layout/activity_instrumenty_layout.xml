@@ -34,6 +34,7 @@
         android:background="#287177"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instrumenty"
         app:layout_constraintVertical_bias="1.0" />
@@ -46,8 +47,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType = "fitXY"
         android:src="@drawable/inst3"
+        android:backgroundTint="#287177"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
@@ -59,8 +61,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/inst2"
+        android:backgroundTint="#287177"
         app:layout_constraintStart_toEndOf="@+id/inst_1"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
 
@@ -73,8 +76,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/inst8"
+        android:backgroundTint="#287177"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/inst_2"
         app:layout_constraintTop_toTopOf="@+id/Tło2" />
@@ -89,6 +93,7 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/inst6"
+        android:backgroundTint="#287177"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toBottomOf="@+id/inst_1" />
 
@@ -100,8 +105,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/inst9"
+        android:backgroundTint="#287177"
         app:layout_constraintStart_toEndOf="@+id/inst_4"
         app:layout_constraintTop_toBottomOf="@+id/inst_2" />
 
@@ -115,6 +121,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
+        android:backgroundTint="#287177"
         android:scaleType="fitXY"
         android:src="@drawable/inst7"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
@@ -133,6 +140,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/inst4"
+        android:backgroundTint="#287177"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/inst_9"
         app:layout_constraintTop_toBottomOf="@+id/inst_5" />
@@ -146,8 +154,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/inst5"
+        android:backgroundTint="#287177"
         app:layout_constraintEnd_toEndOf="@+id/Tło2"
         app:layout_constraintStart_toEndOf="@+id/inst_5"
         app:layout_constraintTop_toBottomOf="@+id/inst_3" />
@@ -163,6 +172,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/inst1"
+        android:backgroundTint="#287177"
         app:layout_constraintBottom_toBottomOf="@+id/Tło2"
         app:layout_constraintStart_toStartOf="@+id/Tło2"
         app:layout_constraintTop_toBottomOf="@+id/inst_4" />

@@ -73,10 +73,11 @@ open class Funkcje {
                 indeks = lista.get(lista.lastIndex)
                 nazwaDokumentu = layout + indeks
             }
-
         }
         return nazwaDokumentu
     }
+
+
 
     fun getResourceID(resName: String, resType: String?, ctx: Context): Int {
         val ResourceID = ctx.resources.getIdentifier(
@@ -91,5 +92,6 @@ open class Funkcje {
             ResourceID
         }
     }
+
 
 }

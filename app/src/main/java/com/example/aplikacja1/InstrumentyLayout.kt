@@ -89,9 +89,9 @@ class InstrumentyLayout : AppCompatActivity() {
                 var dok = obj.losuj(czyLosowac, losowe, Nazwy.SO)
                 if (!piosenki.contains(dok)) {
 
-                    val i = ImageView(getApplicationContext())
-                    i.setImageResource(R.drawable.dobrze)
-                    val toast = Toast(getApplicationContext())
+//                    val i = ImageView(getApplicationContext())
+//                    i.setImageResource(R.drawable.dobrze)
+//                    val toast = Toast(getApplicationContext())
                     piosenki.add(dok)
 
                 }
@@ -148,10 +148,14 @@ class InstrumentyLayout : AppCompatActivity() {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
 
+
                     var zmienna = indeksy.get(i)
+
 
 //                    //wyświetl emotke
                     if (id == zmienna) {
+
+
                         val k = ImageView(getApplicationContext())
                         k.setImageResource(R.drawable.dobrze)
                         val toast = Toast(getApplicationContext())
