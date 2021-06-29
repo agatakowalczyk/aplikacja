@@ -134,36 +134,42 @@ class FarmaActivity : AppCompatActivity() {
         for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
-                    mediaPlayer!!.pause()
-                    var zmienna = indeksy.get(i)
+                    if(piosenki.count()!=0){
+                        mediaPlayer!!.pause()
+                        var zmienna = indeksy.get(i)
 
-                    if (id == zmienna) {
-                        val k = ImageView(getApplicationContext())
-                        k.setImageResource(R.drawable.dobrze)
-                        val toast = Toast(getApplicationContext())
-                        toast.setDuration(Toast.LENGTH_SHORT)
-                        toast.setGravity(Gravity.CENTER, 0, 0)
-                        toast.setView(k)
-                        toast.show()
+                        if (id == zmienna) {
+                            val k = ImageView(getApplicationContext())
+                            k.setImageResource(R.drawable.dobrze)
+                            val toast = Toast(getApplicationContext())
+                            toast.setDuration(Toast.LENGTH_SHORT)
+                            toast.setGravity(Gravity.CENTER, 0, 0)
+                            toast.setView(k)
+                            toast.show()
 
-                        punkty += 1
-                        licznik+=1
-                        czyLosowac = true
+                            punkty += 1
+                            licznik+=1
+                            czyLosowac = true
 
-                        if (licznik==9) {
-                            openBrawo()
+                            if (licznik == 9) {
+                                openBrawo()
+                            }
+                        } else {
+                            val k = ImageView(getApplicationContext())
+                            k.setImageResource(R.drawable.zle)
+                            val toast = Toast(getApplicationContext())
+                            toast.setDuration(Toast.LENGTH_SHORT)
+                            toast.setGravity(Gravity.CENTER, 0, 0)
+                            toast.setView(k)
+                            toast.show()
+                            czyLosowac = true
+                            licznik+=1
                         }
-                    } else {
-                        val k = ImageView(getApplicationContext())
-                        k.setImageResource(R.drawable.zle)
-                        val toast = Toast(getApplicationContext())
-                        toast.setDuration(Toast.LENGTH_SHORT)
-                        toast.setGravity(Gravity.CENTER, 0, 0)
-                        toast.setView(k)
-                        toast.show()
-                        licznik+=1
-                        czyLosowac = true
                     }
+                    else{
+                        Log.d(ContentValues.TAG, "Brak muzyki")
+                    }
+
                 }
             })
         }
