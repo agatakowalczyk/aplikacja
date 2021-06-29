@@ -67,6 +67,7 @@ class InstrumentyLayout : AppCompatActivity() {
                 indeksy.add(losuj);
             }
         }
+
         nazwy.forEachIndexed { index, it ->
             var str = "inst" + indeksy.get(index).toString()
             it.setImageDrawable(
@@ -79,11 +80,6 @@ class InstrumentyLayout : AppCompatActivity() {
             )
         }
 
-        wstecz?.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                openLayoutMain()
-            }
-        })
 
         play?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -136,8 +132,7 @@ class InstrumentyLayout : AppCompatActivity() {
             }
         })
 
-
-
+        
             for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
@@ -174,6 +169,11 @@ class InstrumentyLayout : AppCompatActivity() {
                 }
             })
         }
+        wstecz?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                openLayoutMain()
+            }
+        })
 
 
     }

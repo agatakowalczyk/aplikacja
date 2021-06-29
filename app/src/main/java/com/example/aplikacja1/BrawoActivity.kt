@@ -37,7 +37,7 @@ class BrawoActivity : AppCompatActivity() {
 
         wstecz = findViewById(R.id.powrot5)
         val punkty=intent.getStringExtra("zmienna")
-        val tekst2:String ="$punkty/10"
+        val tekst2:String ="$punkty/9"
         punkt = findViewById<TextView>(R.id.Punkty).apply {
             text = tekst2
         }
