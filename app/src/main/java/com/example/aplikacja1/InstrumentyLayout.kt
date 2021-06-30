@@ -4,8 +4,8 @@ import android.content.ContentValues
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -13,12 +13,16 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.core.net.toUri
 import com.google.firebase.firestore.FirebaseFirestore
 import java.io.IOException
-import java.util.ArrayList
+import java.util.*
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 import kotlin.random.Random
+
 
 class InstrumentyLayout : AppCompatActivity() {
 
@@ -99,13 +103,18 @@ class InstrumentyLayout : AppCompatActivity() {
                             mediaPlayer = MediaPlayer()
                             mediaPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
                             //play?.isClickable=false
+
+
+
                             try {
-                                mediaPlayer!!.setDataSource(
-                                    this@InstrumentyLayout,
-                                    piosenka.songUrl.toUri()
-                                )
-                                mediaPlayer!!.prepare()
-                                mediaPlayer!!.start()
+
+                                    mediaPlayer!!.setDataSource(
+                                        this@InstrumentyLayout,
+                                        piosenka.songUrl.toUri()
+                                    )
+                                    mediaPlayer!!.prepare()
+                                    mediaPlayer!!.start()
+
 
 //                                if(mediaPlayer!!.isPlaying){
 //                                    mediaPlayer!!.stop()
@@ -113,14 +122,14 @@ class InstrumentyLayout : AppCompatActivity() {
 //                                else{
 //                                    mediaPlayer!!.start()
 //                                }
-
                             } catch (e: IOException) {
-                                Toast.makeText(
-                                    this@InstrumentyLayout,
-                                    "Error found is $e",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
+                                    Toast.makeText(
+                                        this@InstrumentyLayout,
+                                        "Error found is $e",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+
 
                         } else {
                             Log.d(ContentValues.TAG, "No such document")
@@ -155,7 +164,9 @@ class InstrumentyLayout : AppCompatActivity() {
 
                             if (licznik == 9) {
                                 openBrawo()
+                                toast.cancel()
                             }
+
                         } else {
                             val k = ImageView(getApplicationContext())
                             k.setImageResource(R.drawable.zle)
@@ -178,6 +189,7 @@ class InstrumentyLayout : AppCompatActivity() {
         wstecz?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 openLayoutMain()
+
             }
         })
 
@@ -195,7 +207,11 @@ class InstrumentyLayout : AppCompatActivity() {
             putExtra("zmienna",pkt)
         }
         startActivity(intent)
+        finish()
     }
+
+
+
 
 }
 

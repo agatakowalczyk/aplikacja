@@ -27,18 +27,21 @@ class PojazdyLayout : AppCompatActivity() {
     private var nazwaTrybu: TextView? = null;
     private var wykrzyknik: TextView? = null;
     private var wyswietlanyTekst: TextView? = null;
-    //guziki do obslugiwania apki
-    private var play: AppCompatImageButton? =null;
-    private var wstecz: AppCompatImageButton? =null;
 
-    private val obj = Funkcje() //obiekt klasy funkcje, abyśmy mogły wykorzystywać metody niestatyczne
+    //guziki do obslugiwania apki
+    private var play: AppCompatImageButton? = null;
+    private var wstecz: AppCompatImageButton? = null;
+
+    private val obj =
+        Funkcje() //obiekt klasy funkcje, abyśmy mogły wykorzystywać metody niestatyczne
 
     private var licznik = 0
     private var id = 0
     private var czyLosowac = true
     private var punkty = 0
     private var losowe: ArrayList<Int> = ArrayList()
-    private val indeksy: ArrayList<Int> = ArrayList()   //tablica do przechowywania indeksów losowanych obrazków
+    private val indeksy: ArrayList<Int> =
+        ArrayList()   //tablica do przechowywania indeksów losowanych obrazków
     private var piosenki: ArrayList<String> = ArrayList()
 
     var mediaPlayer: MediaPlayer? = null
@@ -47,7 +50,7 @@ class PojazdyLayout : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pojazdy_layout)
 
-        nazwaTrybu =findViewById(R.id.nazwaPojazdy)
+        nazwaTrybu = findViewById(R.id.nazwaPojazdy)
         wyswietlanyTekst = findViewById(R.id.JakiPojazd_tekst)
         wykrzyknik = findViewById(R.id.JakiPojazd_tekst)
 
@@ -65,14 +68,14 @@ class PojazdyLayout : AppCompatActivity() {
         )
 
         //losowanie indeksów w tablicy bez powtórzeń
-        while(indeksy.count()<9) {
-            var losuj = Random.nextInt(1,10)
+        while (indeksy.count() < 9) {
+            var losuj = Random.nextInt(1, 10)
             if (!indeksy.contains(losuj)) {
                 indeksy.add(losuj);
             }
         }
         //pobieranie obrazka o odpowiedniej wartości indeksu z folderu drawable i dopisywanie do kolejnego przycisku
-        nazwy.forEachIndexed{index, it ->
+        nazwy.forEachIndexed { index, it ->
             var str = "poj" + indeksy.get(index).toString()
             it.setImageDrawable(
                 resources.getDrawable(
@@ -84,11 +87,11 @@ class PojazdyLayout : AppCompatActivity() {
             )
         }
 
-        play =findViewById(R.id.odtwarzaj2)
+        play = findViewById(R.id.odtwarzaj2)
         wstecz = findViewById(R.id.powrot2)
 
-        wstecz?.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v: View?){
+        wstecz?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
                 openLayoutMain()
             }
         })
@@ -142,7 +145,7 @@ class PojazdyLayout : AppCompatActivity() {
         for (i in nazwy.indices) {
             nazwy[i].setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
-                    if(piosenki.count()!=0){
+                    if (piosenki.count() != 0) {
                         mediaPlayer!!.pause()
                         var zmienna = indeksy.get(i)
 
@@ -156,11 +159,12 @@ class PojazdyLayout : AppCompatActivity() {
                             toast.show()
 
                             punkty += 1
-                            licznik+=1
+                            licznik += 1
                             czyLosowac = true
 
                             if (licznik == 9) {
                                 openBrawo()
+                                toast.cancel()
                             }
                         } else {
                             val k = ImageView(getApplicationContext())
@@ -171,10 +175,9 @@ class PojazdyLayout : AppCompatActivity() {
                             toast.setView(k)
                             toast.show()
                             czyLosowac = true
-                            licznik+=1
+                            licznik += 1
                         }
-                    }
-                    else{
+                    } else {
                         Log.d(ContentValues.TAG, "Brak muzyki")
                     }
 
@@ -193,7 +196,9 @@ class PojazdyLayout : AppCompatActivity() {
     private fun openBrawo() {
         val pkt = punkty.toString()
         val intent = Intent(this, BrawoActivity::class.java).apply {
-            putExtra("zmienna",pkt)
+            putExtra("zmienna", pkt)
         }
         startActivity(intent)
-    }}
+        finish()
+    }
+}

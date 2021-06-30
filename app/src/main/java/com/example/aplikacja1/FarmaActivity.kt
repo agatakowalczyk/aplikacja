@@ -153,6 +153,7 @@ class FarmaActivity : AppCompatActivity() {
 
                             if (licznik == 9) {
                                 openBrawo()
+                                toast.cancel()
                             }
                         } else {
                             val k = ImageView(getApplicationContext())
@@ -186,6 +187,7 @@ class FarmaActivity : AppCompatActivity() {
             putExtra("zmienna",pkt)
         }
         startActivity(intent)
+        finish()
     }
 
 }
